@@ -3,7 +3,7 @@
   color: var(--white);
   padding: 2em 0;
   text-align: center;
-  svg {
+  &__logo {
     display: block;
     margin: auto;
     margin-bottom: 2em;
@@ -21,38 +21,69 @@
     text-decoration: none;
     margin-bottom: 2em;
   }
+
+  @mixin icon {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    background-repeat: no-repeat;
+  }
+
+  .icon {
+    &__facebook {
+      @include icon;
+      background-image: url(../images/icon-facebook.svg);
+    }
+    &__youtube {
+      @include icon;
+      background-image: url(../images/icon-youtube.svg);
+    }
+    &__twitter {
+      @include icon;
+      background-image: url(../images/icon-twitter.svg);
+    }
+    &__pinterest {
+      @include icon;
+      background-image: url(../images/icon-pinterest.svg);
+    }
+    &__instagram {
+      @include icon;
+      background-image: url(../images/icon-instagram.svg);
+    }
+  }
   &__copyright {
     color: var(--grayBlue);
     margin-top: 2em;
   }
-}
 
-@mixin icon {
-  width: 40px;
-  height: 40px;
-  display: inline-flex;
-  background-repeat: no-repeat;
-}
-
-.icon {
-  &__facebook {
-    @include icon;
-    background-image: url(../images/icon-facebook.svg);
-  }
-  &__youtube {
-    @include icon;
-    background-image: url(../images/icon-youtube.svg);
-  }
-  &__twitter {
-    @include icon;
-    background-image: url(../images/icon-twitter.svg);
-  }
-  &__pinterest {
-    @include icon;
-    background-image: url(../images/icon-pinterest.svg);
-  }
-  &__instagram {
-    @include icon;
-    background-image: url(../images/icon-instagram.svg);
+  @media screen and (min-width: 1024px) {
+    .wrapper {
+      display: grid;
+      grid-column-gap: 7em;
+      grid-template-columns: 200px 1fr 400px;
+      grid-template-areas:
+        "logo links button"
+        "social links copyright";
+    }
+    &__links {
+      grid-area: links;
+      display: grid;
+      column-gap: 3em;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+    }
+    &__logo {
+      grid-area: logo;
+      margin: initial;
+    }
+    &__social {
+      grid-area: social;
+    }
+    &__button {
+      grid-area: button;
+    }
+    &__copyright {
+      grid-area: copyright;
+    }
   }
 }
