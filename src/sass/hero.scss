@@ -14,6 +14,7 @@
     margin: 0 calc(-1 * var(--wrapperSpace));
     margin-bottom: 1em;
   }
+
   @media screen and (min-width: 748px) {
     text-align: left;
     background: url("../images/bg-intro-desktop.svg") right -380px top -100px
@@ -30,7 +31,7 @@
     &__image {
       grid-area: image;
       min-height: inherit;
-      background: url("../images/image-mockups.png") right -150px bottom no-repeat;
+      background: url("../images/image-mockups.png") right -100px bottom no-repeat;
       background-size: cover;
       position: absolute;
       width: 500px;
@@ -40,13 +41,13 @@
   }
   @media screen and (min-width: 1024px) {
     text-align: left;
-    background: url("../images/bg-intro-desktop.svg") right -450px top -200px
+    background: url("../images/bg-intro-desktop.svg") right -550px top -200px
       no-repeat;
     background-size: cover;
     &__content {
       display: grid;
       grid-template-areas: "description image";
-      grid-template-columns: 380px 1fr;
+      grid-template-columns: 480px 1fr;
       min-height: 500px;
       align-items: center;
     }
